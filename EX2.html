@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="EX2.css">
+  <title>Simple Calculator</title>
+</head>
+<body>
+    <div class="one">
+  <h1>Simple Calculator</h1>
+
+    <input type="text" id="number1" class="jas" placeholder="Enter number"><br>
+    <input type="text" id="number2" class="jas" placeholder="Enter number"><br>
+  <select id="operation"><br>
+    <option value="add">+</option>
+    <option value="subtract">-</option>
+    <option value="multiply">*</option>
+    <option value="divide">/</option>
+  </select><br>
+  <button onclick="calculate()" class="two">Calculate</button> 
+  <h4 id="result">Result: </h4>
+  </div>
+  <script>
+    function calculate() {
+      const number1 = parseFloat(document.getElementById('number1').value);
+      const number2 = parseFloat(document.getElementById('number2').value);
+      const operation = document.getElementById('operation').value;
+      let result;
+
+      switch (operation) {
+        case 'add':
+          result = number1 + number2;
+          break;
+        case 'subtract':
+          result = number1 - number2;
+          break;
+        case 'multiply':
+          result = number1 * number2;
+          break;
+        case 'divide':
+          result = number1 / number2;
+          break;
+        default:
+          result = "Invalid operation";
+      }
+
+      document.getElementById('result').innerText = `Result: ${result}`;
+    }
+  </script>
+</body>
+</html>
